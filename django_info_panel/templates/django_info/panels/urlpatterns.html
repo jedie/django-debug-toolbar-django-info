@@ -1,0 +1,19 @@
+{% load i18n %}
+<table>
+	<thead>
+		<tr>
+            <th>module / function name</th>
+            <th>url name</th>
+            <th>url / regex</th>
+		</tr>
+	</thead>
+	<tbody>
+        {% for url_info in urlpatterns %}
+            <tr class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+                <td>{{ url_info.module }}.<strong>{{ url_info.func_name }}</strong>()</td>
+                <td>{{ url_info.url_name }}</td>
+                <td title="regex: '{{ url_info.regex }}'">{{ url_info.url }}</td>
+            </tr>
+        {% endfor %}
+	</tbody>
+</table>
