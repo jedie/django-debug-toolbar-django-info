@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+
+"""
+    django-info-panel
+    ~~~~~~~~~~~~~~~~~
+
+    :copyleft: 2015 by the django-debug-toolbar-django-info team, see AUTHORS for more details.
+    :created: 2015 by JensDiemer.de
+    :license: GNU GPL v3 or above, see LICENSE for more details.
+"""
+
 from __future__ import absolute_import, unicode_literals
 
 import logging
@@ -12,8 +23,8 @@ logger = logging.getLogger(__name__)
 
 
 class DatabaseInfo(Panel):
-    nav_title = "Database"
-    title="Django-Info / Database Info"
+    nav_title = _("Database")
+    title=_("Database Information")
     template = 'django_info/panels/database.html'
 
     def process_response(self, request, response):
@@ -39,3 +50,4 @@ class DatabaseInfo(Panel):
             "db_table_names": sorted(connection.introspection.table_names()),
             "django_tables": sorted(connection.introspection.django_table_names()),
         })
+
