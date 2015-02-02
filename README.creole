@@ -1,0 +1,27 @@
+Django-Info is a panel for Django Debug Toolbar to display these informations:
+
+* urlpatterns
+* permissions
+* app/model info
+* database table names
+* django table names
+
+
+Install
+=======
+
+Install via pip (pip install django-debug-toolbar-template-timings) then add 'django_info_panel.panels.DjangoInfo.DjangoInfo' to your DEBUG_TOOLBAR_PANELS setting, and add 'django_info_panel' to your INSTALLED_APPS::
+
+{{{
+# http://django-debug-toolbar.readthedocs.org/en/latest/configuration.html#debug-toolbar-panels
+DEBUG_TOOLBAR_PANELS = [
+    ...
+    'django_info_panel.panels.database.DatabaseInfo',
+]
+
+INSTALLED_APPS = [
+    ...
+    'django_info_panel'
+]
+}}}
+
