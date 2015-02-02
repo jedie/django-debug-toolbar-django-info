@@ -1,22 +1,42 @@
-Django-Info is a panel for Django Debug Toolbar to display these informations:
+Django-Info is a panel for [[https://pypi.python.org/pypi/django-debug-toolbar|Django Debug Toolbar]] to display these informations:
 
-* urlpatterns
-* permissions
-* app/model info
-* database table names
-* django table names
+* UrlPatternsInfo:
+** List all urls: "module / function name", "url name", "url / regex"
+* DatabaseInfo:
+** backend information
+** app/model info
+** existing database table names
+
+Most source code parts are from: [[https://github.com/jedie/PyLucid/blob/68591307ad622676185b73bbb0503ce73e155803/pylucid_project/pylucid_plugins/internals/admin_views.py|PyLucid 'show internals' plugin]].
 
 
-Install
-=======
+== screenshots
 
-Install via pip (pip install django-debug-toolbar-template-timings) then add 'django_info_panel.panels.DjangoInfo.DjangoInfo' to your DEBUG_TOOLBAR_PANELS setting, and add 'django_info_panel' to your INSTALLED_APPS::
 
+UrlPatternsInfo:
+
+{{http://www.jensdiemer.de/static/jensdiemer.de/screenshots/django-debug-toolbar-django-info_urlpatterns01.png|screenshot URL-Patterns info}}
+
+
+DatabaseInfo:
+
+{{http://www.jensdiemer.de/static/jensdiemer.de/screenshots/django-debug-toolbar-django-info_DatabaseInfo01.png|screenshot Database info}}
+
+
+== install
+
+Install via pip, e.g.:
+{{{
+$ pip install django-debug-toolbar-django-info
+}}}
+
+Add to your {{{settings.py}}}, e.g.:
 {{{
 # http://django-debug-toolbar.readthedocs.org/en/latest/configuration.html#debug-toolbar-panels
 DEBUG_TOOLBAR_PANELS = [
     ...
     'django_info_panel.panels.database.DatabaseInfo',
+    'django_info_panel.panels.urlpatterns.UrlPatternsInfo',
 ]
 
 INSTALLED_APPS = [
@@ -25,3 +45,31 @@ INSTALLED_APPS = [
 ]
 }}}
 
+
+== compatibility
+
+Tested in these combination:
+
+|= django-info |= django-debug-toolbar |= Django
+| v0.1.0       | v1.2.2                | v1.7.4
+
+
+== changelog ==
+
+* v0.1.0 - 02.02.2012:
+** First release
+
+
+= donation
+
+* [[https://flattr.com/thing/54709/PyLucid-CMS|Flattr this!]]
+* Send [[http://www.bitcoin.org/|Bitcoins]] to [[https://blockexplorer.com/address/1823RZ5Md1Q2X5aSXRC5LRPcYdveCiVX6F|1823RZ5Md1Q2X5aSXRC5LRPcYdveCiVX6F]]
+* [[Paypal over SourceForge.net|http://sourceforge.net/donate/index.php?group_id=146328]]
+* [[Paypal over Pledgie|https://pledgie.com/campaigns/10140]]
+
+
+= links
+
+| Forum               | [[http://forum.pylucid.org/]]
+| IRC                 | [[http://www.pylucid.org/permalink/304/irc-channel|#pylucid on freenode.net]]
+| Github              | [[https://github.com/jedie/django-debug-toolbar-django-info]]
