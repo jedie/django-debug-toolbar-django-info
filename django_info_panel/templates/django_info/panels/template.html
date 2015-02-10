@@ -1,0 +1,18 @@
+{% load i18n %}
+{% for app, app_data in template_info.items %}
+    <h3>{{ app }}</h3>
+    {% for lib_name, lib_data in app_data.items %}
+        <h4>{{ app }}.{{ lib_name }}</h4>
+        <pre>&#x7B;% load "{{ lib_name }}" %&#x7D;</pre>
+
+        {% with data=lib_data.tags kind="tags" %}
+            {% include "django_info/panels/template_table.html" %}
+        {% endwith %}
+
+        {% with data=lib_data.filters kind="filters" %}
+            {% include "django_info/panels/template_table.html" %}
+        {% endwith %}
+
+    {% endfor %}
+    <hr/>
+{% endfor %}

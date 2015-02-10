@@ -1,0 +1,16 @@
+{% load i18n %}
+{% if data %}
+<table>
+    <caption>{{ app }}.{{ lib_name }}.<strong>{{ kind }}</strong></caption>
+    {% for name, doc in data.items %}
+        <tr class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+            <td style="width:30%"><strong>{{ name }}</strong>()</td>
+            <td style="width:70%">{% if doc %}<pre>{{ doc }}</pre>{% else %}<i>No DocString.</i>{% endif %}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>
+    ({{ app }}.{{ lib_name }} has no <storng>{{ kind }}</storng>.)
+</p>
+{% endif %}
