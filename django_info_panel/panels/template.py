@@ -59,7 +59,8 @@ def get_templateinfo():
     for module in modules:
         try:
             templatetag_mod = __import__(module, {}, {}, [''])
-        except:
+        except Exception as err:
+            logger.debug("Can't import %r: %s" % (module, err))
             continue
 
         mod_path = os.path.dirname(inspect.getabsfile(templatetag_mod))
