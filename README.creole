@@ -60,12 +60,15 @@ INSTALLED_APPS = [
 Tested in these combination:
 
 |= django-info  |= django-debug-toolbar |= Django
+| v0.3.0        | v1.4                  | v1.8
 | v0.1.0-v0.2.0 | v1.2.2                | v1.7.4
 
 
 == changelog ==
 
-* v0.2.0 - 10.02.2015
+* [[https://github.com/jedie/django-debug-toolbar-django-info/compare/v0.2.0...v0.3.0|08.07.2016 - v0.3.0]]:
+** Update for Django 1.8
+* [[https://github.com/jedie/django-debug-toolbar-django-info/compare/v0.1.0...v0.2.0|10.02.2015 - v0.2.0]]:
 ** Add "Template Tags/Filters Information" with a list of all registered template tags/filters
 * v0.1.0 - 02.02.2015:
 ** First release

@@ -4,15 +4,14 @@
     django-info-panel
     ~~~~~~~~~~~~~~~~~
 
-    :copyleft: 2015 by the django-debug-toolbar-django-info team, see AUTHORS for more details.
+    :copyleft: 2015-2016 by the django-debug-toolbar-django-info team, see AUTHORS for more details.
     :created: 2015 by JensDiemer.de
     :license: GNU GPL v3 or above, see LICENSE for more details.
 """
 
 from __future__ import absolute_import, unicode_literals
-import fnmatch
-import glob
 
+import fnmatch
 import sys
 import os
 
@@ -25,11 +24,8 @@ import inspect
 import logging
 
 import django
-from django.db import backend, connection
-from django.db.models.loading import get_apps, get_models
-from django.template import get_templatetags_modules, get_library
+from django.template.base import get_library, get_templatetags_modules
 from django.utils.translation import ugettext_lazy as _
-from django.template import RequestContext, Template
 
 
 from debug_toolbar.panels import Panel
