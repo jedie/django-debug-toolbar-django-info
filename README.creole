@@ -41,8 +41,8 @@ $ pip install django-debug-toolbar-django-info
 Add to your {{{settings.py}}}, e.g.:
 {{{
 # http://django-debug-toolbar.readthedocs.org/en/latest/configuration.html#debug-toolbar-panels
-DEBUG_TOOLBAR_PANELS = [
-    ...
+from debug_toolbar.settings import PANELS_DEFAULTS
+DEBUG_TOOLBAR_PANELS = PANELS_DEFAULTS + [
     'django_info_panel.panels.database.DatabaseInfo',
     'django_info_panel.panels.urlpatterns.UrlPatternsInfo',
     'django_info_panel.panels.template.TemplateInfo',
@@ -60,7 +60,7 @@ INSTALLED_APPS = [
 Tested in these combination:
 
 |= django-info  |= django-debug-toolbar |= Django
-| v0.3.0        | v1.4                  | v1.8
+| v0.3.0        | v1.4-1.9x             | v1.8
 | v0.1.0-v0.2.0 | v1.2.2                | v1.7.4
 
 
